@@ -35,3 +35,5 @@ F:\Users\Kosiarz\Documents\Projekty\C#\Semestr IV\AddressBookPS5\obj\Debug\netco
 F:\Users\Kosiarz\Documents\Projekty\C#\Semestr IV\AddressBookPS5\obj\Debug\netcoreapp3.1\AddressBookPS5.pdb
 F:\Users\Kosiarz\Documents\Projekty\C#\Semestr IV\AddressBookPS5\obj\Debug\netcoreapp3.1\AddressBookPS5.genruntimeconfig.cache
 F:\Users\Kosiarz\Documents\Projekty\C#\Semestr IV\AddressBookPS5\obj\Debug\netcoreapp3.1\AddressBookPS5.csproj.CopyComplete
+F:\Users\Kosiarz\Documents\Projekty\C#\Semestr IV\AddressBookPS5\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+F:\Users\Kosiarz\Documents\Projekty\C#\Semestr IV\AddressBookPS5\obj\Debug\netcoreapp3.1\Razor\Pages\AddressList.cshtml.g.cs

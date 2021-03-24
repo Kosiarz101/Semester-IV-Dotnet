@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace AddressBookPS5.Pages
 {
@@ -29,11 +31,12 @@ namespace AddressBookPS5.Pages
         }
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return Page();
+                HttpContext.Session.SetString("SessionAddress", JsonConvert.SerializeObject(Address));
+                return RedirectToPage("./AddressList");
             }
-            return RedirectToPage("./Privacy");
+            return Page();
         }
     }
 }

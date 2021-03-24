@@ -1,0 +1,23 @@
+﻿@page
+@model FizzBuzzWebEdition.Pages.LastSearchedModel
+@{
+}
+<p>Dane zapisane z ostatniego wyszukania FizzBuzz</p>
+@if (Model.CurrentFizzBuzz != null)
+{
+    <p>
+        @Html.DisplayNameFor(model => Model.CurrentFizzBuzz.Result):
+        @Model.CurrentFizzBuzz.Result
+    </p>
+    <p>
+        @Html.DisplayNameFor(model => Model.CurrentFizzBuzz.SearchedValue):
+        @Model.CurrentFizzBuzz.SearchedValue
+    </p>
+    <p>
+        @Html.DisplayNameFor(model => Model.CurrentFizzBuzz.LastSearchDate):
+        @Model.CurrentFizzBuzz.LastSearchDate
+    </p>
+    <p>
+        
+    </p>
+}
