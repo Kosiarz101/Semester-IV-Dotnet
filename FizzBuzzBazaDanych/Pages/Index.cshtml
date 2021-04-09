@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h2 class="display-4"> Welcome to FizzBuzz <b>Web Edition</b></h2><br />
+    <form method="post">
+        <label asp-for="InputValue"></label>
+        <span asp-validation-for="InputValue" class="text-danger"></span>
+        <input asp-for="InputValue" /><br /><br />
+        <button class="btn btn-primary" type="submit">Zatwierdź</button>
+    </form><br />
+    @if (Model.CurrentFizzBuzz != null)
+    {
+        @if (Model.CurrentFizzBuzz.Result == "")
+        {
+            <h3>
+                Liczba: @Model.CurrentFizzBuzz.SearchedValue nie spełnia kryteriów Fizz/Buzz
+            </h3>
+        }
+        else
+        {
+            <h3>
+                Otrzymano: @Model.CurrentFizzBuzz.Result
+            </h3>
+        }
+    }
+
+</div>
