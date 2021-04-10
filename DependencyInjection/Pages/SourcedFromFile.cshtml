@@ -1,0 +1,15 @@
+﻿@page
+@model DependencyInjection.Pages.SourcedFromFileModel
+@{
+}
+@foreach (var product in Model.Products)
+{
+    <div class="card" style="width: 50%;">
+        <img class="card-img-top" src="@product.Image" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@product.Title</h5>
+            <p class="card-text">@product.Description</p>
+            <a href="@product.Url" class="btn btn-primary">Go to This Website</a>
+        </div>
+    </div>
+}
