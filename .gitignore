@@ -1,4 +1,9 @@
 .vs
+obj/
+bin/
 /Fizzbuzz
 /FizzBuzzWebEdition
 /AddressBookPS5
+*.user
+*.mdf
+*.ldf
