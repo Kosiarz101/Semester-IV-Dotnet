@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace FizzBuzzBazaDanych.Forms
 {
     public class FizzBuzz
-    {      
+    {
         public int Id { get; set; }
         [Display(Name = "Otrzymano")]
         [Column(TypeName = "varchar(20)")]
@@ -17,11 +17,14 @@ namespace FizzBuzzBazaDanych.Forms
         public int SearchedValue { get; set; }
         [Display(Name = "Data ostatniego wyszukiwania")]
         public DateTime LastSearchDate { get; set; }
+        [MaxLength(300)]
+        [Display(Name = "Dodane przez użytkownika: ")]
+        public string Creator { get; set; }
         public FizzBuzz()
         {
             Result = "";
         }
-        public void Calculate(int searchedValue)
+        public void Calculate(int searchedValue, string userId)
         {
             SearchedValue = searchedValue;
             if (SearchedValue % 3 == 0)
@@ -29,6 +32,7 @@ namespace FizzBuzzBazaDanych.Forms
             if (SearchedValue % 5 == 0)
                 Result += "Buzz";
             LastSearchDate = DateTime.Now;
+            Creator = userId;
         }
     }
 }

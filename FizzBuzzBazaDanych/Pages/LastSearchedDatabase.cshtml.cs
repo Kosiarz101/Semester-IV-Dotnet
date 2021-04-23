@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using FizzBuzzBazaDanych.Data;
 using FizzBuzzBazaDanych.Forms;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FizzBuzzBazaDanych.Pages
 {
+    [Authorize]
     public class LastSearchedDatabaseModel : PageModel
     {
         private readonly FizzBuzzContext _context;
@@ -21,7 +23,7 @@ namespace FizzBuzzBazaDanych.Pages
         {
             var FizzBuzzQuery = (from FizzBuzzData in _context.FizzBuzzData
                                 orderby FizzBuzzData.LastSearchDate descending
-                                select FizzBuzzData).Take(10);
+                                select FizzBuzzData).Take(20);
             FizzBuzzEntries = FizzBuzzQuery.ToList();
         }      
     }

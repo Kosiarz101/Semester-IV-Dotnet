@@ -2,6 +2,7 @@ using FizzBuzzBazaDanych.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,6 +35,10 @@ namespace FizzBuzzBazaDanych
             services.AddDbContext<FizzBuzzContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("FizzBuzzDatabaseString"));
             });
+            services.Configure<IdentityOptions>(options =>
+            {               
+                options.Password.RequireNonAlphanumeric = false;                
+            });
             services.AddRazorPages();
         }
 
@@ -55,7 +60,8 @@ namespace FizzBuzzBazaDanych
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseSession();
+            app.UseSession();                       
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
