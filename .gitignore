@@ -1,4 +1,11 @@
 .vs
+obj/
+bin/
+/AuthenticationTest
+/EFDemo
 /Fizzbuzz
 /FizzBuzzWebEdition
 /AddressBookPS5
+*.user
+*.mdf
+*.ldf

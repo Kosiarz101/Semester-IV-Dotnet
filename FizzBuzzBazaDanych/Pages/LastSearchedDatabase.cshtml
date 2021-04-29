@@ -1,0 +1,31 @@
+﻿@page
+@model FizzBuzzBazaDanych.Pages.LastSearchedDatabaseModel
+@{
+}
+<p>Dane zapisane z ostatnich wyszukiwań FizzBuzz</p>
+<div class="btn-group-vertical float-right">
+    <a class="btn btn-secondary float-right mb-2" asp-page-handler="OnGet" asp-page="./LastSearchedDatabase">wyświetl wszystkie wpisy</a>
+    <a class="btn btn-info float-right" asp-page-handler="UserList" asp-page="./LastSearchedDatabase">wyświetl tylko moje wpisy</a>
+</div>
+<div>
+    @foreach (var item in Model.FizzBuzzEntries)
+    {
+        <h3>
+            @Html.DisplayNameFor(model => item.Id):
+            @item.Id
+        </h3>
+        <p>
+            @Html.DisplayNameFor(model => item.Result):
+            @item.Result
+        </p>
+        <p>
+            @Html.DisplayNameFor(model => item.SearchedValue):
+            @item.SearchedValue
+        </p>
+        <p>
+            @Html.DisplayNameFor(model => item.LastSearchDate):
+            @item.LastSearchDate
+            <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+        </p>
+    }
+</div>
